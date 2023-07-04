@@ -17,6 +17,7 @@ puts "Creating 5 restaurants"
     address: Faker::Address.street_address,
     category: Restaurant::CATEGORIES.sample, # This one is not from Faker as I have an array validation
     phone_number: Faker::PhoneNumber.cell_phone
+    # class::constant.method
   )
   puts "#{restaurant.name} created."
 end
