@@ -1,0 +1,12 @@
+<div class ="container mt-5">
+  <h1>What restaurant do you want to add?</h1>
+    <%= simple_form_for(@restaurant) do |f| %>
+    <%= f.input :name %>
+    <%= f.input :category %>
+    <%= f.input :address %>
+    <%= f.input :phone_number %>
+    <%= f.submit %>
+  <% end %>
+  <br>
+  <%= link_to "Back", restaurants_path(@restaurant), class: "btn btn-primary" %>
+</div>

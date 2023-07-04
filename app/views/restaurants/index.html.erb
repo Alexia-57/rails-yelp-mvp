@@ -5,4 +5,5 @@
       <li><%= link_to restaurant.name, restaurant_path(restaurant) %></li> <!-- restaurant_path = route to show-->
     <% end %>
   </ul>
+  <%= link_to "Add", new_restaurant_path(@restaurant), class: "btn btn-primary" %>
 </div>
