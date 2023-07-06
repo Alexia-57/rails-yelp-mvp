@@ -1,8 +1,18 @@
 <div class ="container mt-5">
   <h1><%= @restaurant.name %></h1>
-  <p>Category: <%= @restaurant.category %></p>
-  <p>Address: <%= @restaurant.address %></p>
-  <p>Phone number: <%= @restaurant.phone_number %></p>
-
-  <%= link_to "Back", restaurants_path(@restaurant), class: "btn btn-primary" %>
+  <div class="mb-3">
+    <p>Category: <%= @restaurant.category %></p>
+    <p>Address: <%= @restaurant.address %></p>
+    <p>Phone number: <%= @restaurant.phone_number %></p>
+    <p>Reviews:</p>
+      <% @restaurant.reviews.each do |review| %>
+        <ul>
+          <li><%= review.content %></li>
+        </ul>
+      <% end %>
+    </div>
+    <div>
+      <%= link_to "Add a review", new_restaurant_review_path(@restaurant), class: "btn btn-primary" %>
+      <%= link_to "Back", restaurants_path(@restaurant), class: "btn btn-primary" %>
+    </div>
 </div>

@@ -2,6 +2,7 @@ class ReviewsController < ApplicationController
 
   # GET "restaurants/38/reviews/new"
 
+  ### not needed except if there is a depency with another element (e.g review needs a rating to be created)
   def new
     # find a restaurant instance based on its restaurant id # not only params[:id], need to specify restaurant id
     @restaurant = Restaurant.find(params[:restaurant_id])
@@ -29,8 +30,6 @@ class ReviewsController < ApplicationController
   private
 
   def review_params
-    params.require(:rating).permit(:content)
+    params.require(:review).permit(:content, :rating)
   end
 end
-
-### WILL NEED TO WORK ON THE CREATE METHOD
